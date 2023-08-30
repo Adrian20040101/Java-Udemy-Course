@@ -1,0 +1,12 @@
+inheritance describes an IS A relationship, whereas composition describes a HAS A relationship.
+
+inheritance is a way to reuse functionality and attributes, whereas composition is a way to make combination of classes act like a single
+coherent object.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+that siad, composition is preffered over inheritance in many designs, because:
+  
+  - it is more flexible. You can add or remove parts, which result in less likelyhood of having a downstream effect
+  - it provides functional reuse outside of the class hierarchy
+  - Java's inheritance breaks encapsulation, because subclasses may need direct access to a parent's state or behaviour
