@@ -1,3 +1,0 @@
-- polymorphism = many forms
-- it lets us write code to call a method, but the method's behaviour will be determined at runtime and can be different for different 
-  objects
