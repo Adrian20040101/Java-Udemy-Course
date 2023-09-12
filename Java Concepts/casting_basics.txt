@@ -1,0 +1,41 @@
+jshell> short myMinShortValue = Short.MIN_VALUE;
+myMinShortValue ==> -32768
+
+jshell> short myNewShortValue = (myMinShortValue / 2);
+|  Error:
+|  incompatible types: possible lossy conversion from int to short
+|  short myNewShortValue = (myMinShortValue / 2);
+|                           ^-----------------^
+
+jshell> short myNewShortValue = (short) (myMinShortValue / 2);
+myNewShortValue ==> -16384
+
+jshell> //this is called casting, telling the compiler the specific data type to treat it as. By default it is integer
+
+-------------------------------------------------------------------------------
+
+jshell> float myFloatValue = 5;
+myFloatValue ==> 5.0
+
+jshell> double myDoubleValue = 5;
+myDoubleValue ==> 5.0
+
+jshell> float myOtherFloatValue = 5.25;
+|  Error:
+|  incompatible types: possible lossy conversion from double to float
+|  float myOtherFloatValue = 5.25;
+|                            ^--^
+
+jshell> float myOtherFloatValue = (float) 5.25;
+myOtherFloatValue ==> 5.25
+
+jshell> //what we did here is another example of casting, applied to real numbers
+
+jshell> //altough casting works just fine, most programmers tend to solve this issue in this manner:
+
+jshell> float myOtherFloatValue = 5.25f;
+myOtherFloatValue ==> 5.25
+
+jshell> //notice the 'f' symbol after the assigned value, it is doing the same job as the casting, just in a quicker and more concise way
+
+jshell> //also, keep in mind that java's default data types for integer numbers is int and for real numbers is double (not float, since double is more precise)

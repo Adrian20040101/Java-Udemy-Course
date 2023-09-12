@@ -1,0 +1,15 @@
+- encapsulation refers to hiding things, by making them private, or inaccessible (this was briefly pointed out when discussing why getters
+  are important
+- it is important to hide certain things in Java for a couple of reasons:
+    - make the interface simpler by hiding unnecessary details
+    - protect the integrity of data on an object; to achieve this we may hide or restrict some data or operations
+    - decouple published interface from the internal details of the class; to achieve this we may hide actual names and types of class
+      members 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+- problems that can occur in a code that doesn't follow the concept of encapsulation:
+    - allowing direct access to data on an object can potentially bypass any checks that have been implemented inside of methods. 
+    - allowing direct access to fields means calling code would need to change when you edit any of the fields in the class.
+    - omitting a constructor that would accept initialization data, may mean the calling code is responsible for setting up this data, on
+      the new object. By using a constructor, we can also validate data to ensure the validity of the object before we run the program.

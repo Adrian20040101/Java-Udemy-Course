@@ -1,0 +1,18 @@
+- method overloading = providing two or more separate methods in a class with the same name, but different signature.
+- different signature means that the number of parameters, type of parameters or order of parameters must differ between the methods
+- very useful for code reusability and reduces duplicate code
+- can overload static or instance methods
+- it is often refered to as compile time polymorphism, because the compiler has to decide which method it should call, based on the
+  number of parameters provided (or type, or order). Note that even though these methods have the same name, they are not identical and 
+  are treated as separate methods
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+- method overriding = defining a method that already exists in the parent class, with thse same signature
+- also known as runtime polymorphism, becuase the method that is going to be called is decided at runtime by java
+- it is good practice to add a '@Override' annotation above an overridden method
+- we can't overide static methods, only instance methods
+- constructors or private methods cannot be overridden
+- it is forbidden to override methods that are more restrictive in the child class. For example, a method that is defined as 'protected'
+  in the superclass, cannot be overriden by defining it as 'private' in the child class; but if we define it as 'public' in the child
+  class, it will compile

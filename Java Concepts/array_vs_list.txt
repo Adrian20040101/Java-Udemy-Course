@@ -1,0 +1,31 @@
+- an array is mutable, meaning we can change the values inside the array, but we cannot resize it. It has a fixed size determined at the
+declaration
+
+- list is a special type in Java, called Interface
+
+- the ArrayList is a class, that maintains in most cases an array in memory, that is bigger than what we actually need in most cases
+
+- it keeps track of the array's capacity
+
+- as elements are added in the ArrayList, its capacity can increase if needed. This happens automatically => resizeable
+
+- an ArrayList doesn't accept primitive data types, whereas the array does accept them
+
+- ArraysLists come with built-in support for printing out elements, whereas for arrays you'd need to call the Arrays.toString method
+
+- methods to create lists and arrays from ArrayLists (these are copied from the code in ArrayLists project):
+
+//in summary, we can create Lists in two ways and with different functionality:
+
+        //1. String[] days = new Arrays.asList("Sunday", "Monday", "Tuesday");
+        //   List<String> newList = Arrays.asList(days);
+        //these lines of code declare a list that is NOT resizeable, but is mutable
+
+        //2. String[] days = new Arrays.asList("Sunday", "Monday", "Tuesday");
+        //   List<String> newList = List.of(days);
+        //these lines of code declare a list that is IMMUTABLE
+
+        //also creating an array from ArrayList can be done in the following way
+
+        //ArrayList<String> stringLists = new ArrayList<>(List.of("Jan", "Feb", "Mar"));
+        //String[] stringArray = stringLists.toArray(new String[0]);
