@@ -1,0 +1,45 @@
+- an interface is similar to an abstract class, altough it isn't a class at all
+
+- by declaring it is using an interface, your class must implements all abstract methods from the interface
+
+- an interface lets classes that might have little else in common, to be recognized as a special reference type
+
+- declaring an interface is similar to declaring a class, using the keyword 'interface' instead of the keyword 'class'
+
+- an interface is usually named with terms that end in 'able', according to the set of behaviours it describes
+
+- a class is asscociated to an interface, by using the implements clause in the class declaration
+  i.e. public class Bird implements FlightEnabled{}
+
+- because of this, we can use FlightEnabled as reference type and assign it to an instance of bird
+
+- we don't have to declare the interface type abstract, because this modifier is implicitely declared, for all interfaces
+
+- likewise, we don't have to declare any methods abstract. Any method declared in the interface is declared implicitly as public and 
+  abstract. Any other access modifier will lead to a compile error
+
+- i.e. if we omit an access modifier on a class member, it is implicitely package private
+       if we omit an access modifier on an interface member, it is implicitely public, only a concrete method can have private access
+
+- a class can only extend a single parent class, which supports single inheritance, but it can implement many interfaces
+
+- interfaces lets us take objects, that may have almost nothing in common and write reusable code, so we can process them all in a like
+  manner
+
+- for example, a jet, a bird and a dragonfly have very little in common, but because they all implement FlightEnabled methods, we can
+  treat them as the same type
+
+- even say a truck class. It obviously doesn't fly, but it can implement the method from the Trackable interface
+
+- an interface won't get instatiated, and its subclasses won't get instantiated either
+
+- there is no such thing as instance field on an interface. The fields are implicitly public static and final, meaning they can be 
+  accessed publicly, they are used by the class (here interface) name in dot notation, and their value is fixed (can't be changed). That 
+  means that these fields are constants, and by the naming convention, they are written in all caps
+
+- interfaces can be extended, similar to classes, using the extends keyword	
+
+- unlike a class, an interface can use the extends keyword with multiple interfaces
+
+- an interface doesn't implement another interface
+
