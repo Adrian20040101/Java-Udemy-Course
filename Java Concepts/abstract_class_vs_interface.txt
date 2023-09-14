@@ -1,0 +1,42 @@
+- abstract classes are very similar to interfaces. Neither of them can be instantiated. Both may contain a mix of methods declared with or without a method block
+
+- Abstract Classes: 
+
+  - with abstract classes, it is possible to define fields that aren't static and final, in other words, instance fields
+  - with abstract classes it is possible to use any four of the access modifiers for its concrete methods, so public, private, protected or the default package (you can use all but the
+  private modifier for its abstract methods)
+  - an abstract class can extend only one parent class, but can implement multiple interfaces
+  - when abstract classes are subclassed, the subclass usually provides implementations for all of the abstract method in the parent class; however if it doesn't, then it means that the 
+  subclass is also an abstract class
+
+- use abstract classes when:
+  
+  - you want to share code among several closely related classes
+  - you expect classes that extend your abstract class to have many common methods or fields, that can access and modify the state of an object
+  - you have requirement for your base class, to provide a default implementation of certain methods, but other methods should be open to being overriden by child classes
+  - as a summary : an abstract class provides a common definition, as a base class, that multiple, derived classes can share
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Interfaces:
+
+  - an interface is just the declaration of methods, which you want some classes to have => it is not the implementation
+  - in an interface, we define what kind of operation an object can perform. These operations are defined by the classes that implement the interface
+  - interfaces form a contract between the class and the outside world and this class is enforced at build time by the java compiler
+  - you can't instantiate interfaces, but they may contain methods declared with or without an implementation
+  - all methods on interfaces declared with or without a body are automatically public and abstract
+  - an interface can extend another interface
+  - interfaces are more flexible, and can deal with more stress on the design of your program, because they aren't part of the class hierarchy
+  - a best practice way of coding, is commonly called 'Coding to an interface'
+  - as a summary: interfaces decouple the "what", from the "how", and are used to make different types, behave in similar ways
+  - since Java 8, interfaces contain default methods, which allow method implementation. The keyword 'default' is used for backward compatibility. Public static methods were also introduced
+    in Java 8
+  - since Java 9, an interface can contain private methods, commonly used when default methods share common code
+
+- use interfaces when :
+
+  - you expect that unrelated classes will implement your interface. For example, two of Java's own interfaces, Comparable and Cloneable, can be implemented by many unrelated classes
+  - you want to specify the behavior of a particular data type, but you are not concerned about who implements its behavior
+  - you want to separate different behavior
+

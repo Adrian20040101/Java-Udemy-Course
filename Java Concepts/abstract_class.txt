@@ -1,0 +1,29 @@
+- an abstract class is declared using the 'abstract' method modifier
+
+- for example: abstract class Animal{}
+
+- an abstract class can be thought of as a class that is incomplete
+
+- you cannot create an instance of an abstract class
+
+- abstract classes can still have constructors, which will be called by its subclasses, during their cinstruction
+
+- an abstract class's purpose is to define a behaviour for its subclasses, so it always participates in inheritance
+
+- a subclass of an abstract class can be concrete or abstract, and even a subclass of a concrete class can be abstract as well
+
+- we can even declare abstract methods. They are also declared using the abstract keyword and are not implemented, not even curly braces
+  have to be written. Abstract methods can only be declared on abstract classes or interfaces
+
+- the difference between the inheritance between a concrete class + concrete subclass and an abstract class(that contains abstract methods)
+  + concrete subclass, is that the in the first case, methods can be (are not required to) be overriden by the subclass, whilst in the 
+  second case, the abstract methods have to overriden, otherwise the code won't compile 
+
+- abstract methods need to be declared as public because the subclasses need to implement them
+
+- when we use the keyword 'final', it means that the method CANNOT be overriden
+
+- an abstract class that extends another abstract class doesn't have to implement the abstract methods from the superclass
+
+- an abstract subclass can also include abstract methods, that wil be implemented by the subclasses, that are concrete, of that respective
+  class
