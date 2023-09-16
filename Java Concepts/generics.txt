@@ -1,0 +1,23 @@
+- we use generics when we want to use a generic data type for our class, to avoid rewriting multiple classes that have similar behaviour
+
+- it is declared using the class name, followed by angle brackets, in which we specify the name of the generic type
+
+- in most cases, the name is a single capital letter, by convention T from Type
+
+- example of generic class declaration : class Team<T> {}
+
+- in the example above, T stands for players that could be added to a team. But there are many different players that can be added, i.e.
+  football player, basketball player, baseball player etc. So the generic type T handles all these cases and doesn't let, for example, 
+  a football team to add a basketball player and so on.
+
+- but in the current implementation, T allows the specified type to be a String for example, or any other non primitive data type 
+  (here is another use case of the autoboxing -> we can't use int in place of T, but we can use its wrapper, Integer)
+
+- to avoid being able to do that, we need to declare the generic class as follows: class Team<T extends Player> {}
+
+- the above declaration doesn't say that T extends Player like we have seen in inheritance examples before. It simply tells the compiler, 
+  that the type passed in in place of T must be a Player or a subtype of Player, hindering the introduction in place of T for String etc.
+  this established something that's called an upper bound, on the types that are allowed to be used with this class. Also note, that Player
+  can be either a class or an interface, it doesn't matter in this case
+
+- a generic class isn't limited to using a single type in agle brackets, we can use more, i.e. class Team<T, S, U> {}
