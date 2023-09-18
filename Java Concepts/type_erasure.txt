@@ -1,0 +1,12 @@
+- generics exist to enforce tighter type checks, at compile time
+
+- the compiler transforms a geenric class into a typed class, meaning the byte code, or class file, contains no type parameters
+
+- everywhere a type parameter is used in a class(a T), it gets replaced with the specified upper bound. If an upper bound is unspecified, 
+  then it gets replaced with type Object (the ultimate superclass, from which all other classes derive)
+
+- this transformation is called type erasure, because the T parameter is erased and replaced with a true type, the upper bound
+
+- why is this important? Well, when two ore more OVERLOADED methods have the same upper bound (either specified or implicitly replaced
+  withObject), it causes a compiler error, because it doesn't know which method to call. Understanding how type erasure works for overloaded
+  methods is very important -> for examples refer to the code in Generics/GenericsExtra to see how this situation has been handled

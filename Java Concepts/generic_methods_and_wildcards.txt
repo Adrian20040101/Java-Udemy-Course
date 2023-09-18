@@ -1,0 +1,34 @@
+- a generic method is a special type of method that determines what types should be processed at runtime, much like generic classes
+
+- for a method, type parameters are placed after any modifiers and before method's return type
+
+- type parameter can be referenced in mehtod parameters or as method return type, or in method code block
+
+- so, a generic method can be used for collections with type arguments, to allow for variability of the elements in the collection, without
+  using a raw version of the collection
+
+- a general form of a generic method mat look something like this : public static <T> void printItems(List<T> items)
+
+- a generic method can be used for static methods on a generic class, or on a non-generic class
+
+- the geenric method type parameter is different from a geenric class type parameter
+
+- Wildcards:
+  - to better understand this concept, let's first talk about the difference between type parameter and type arguments
+  - type parameter is a geenric class, or a generic method's declaration of the type (in both examples, T is said to be the type parameter)
+  - you can bind the type parameter to specify an upper bound, using the extends keyword
+  
+  - a type argument declares the type be used, and is specified in a type reference, such as local variable, method parameter declaration,
+    or field declaration
+  - i.e. Team<BaseballPlayer> team = new Team<>();  // in this example, BaseballPlayer is the type argument
+
+  - a wildcard can only be used as a type argument, not in the type parameter declaration
+  - a wildcard is represented using '?' character and it means that the type is unknown (this means that a wildcard limits what you can
+    do, when you specify a type this way)  -> i.e. List<?> unknownList
+  - a wildcard cannot be used in an instantiation of a generic class  -> i.e. var myList = new ArrayList<?>() //this is INVALID syntax
+  - a wildcard can be unbounded, or alternately, specify either an upper bound or a lower bound, but never both at the same time
+    i.e. 
+        - unbounded : List<?>
+        - upper bounded : List<? extends Student>
+        - lower bounded : List<? super LPAStudent>  , where LPAStudent is a subclass of STudent 
+	

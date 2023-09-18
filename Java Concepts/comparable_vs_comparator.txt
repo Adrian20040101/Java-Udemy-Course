@@ -1,0 +1,14 @@
+- Comparable
+  - general form : int compareTo (T o) //where T stands for a specific type, and o stands for an object
+  - it compares the argument with the current instance that calls it //i.e. instance.compareTo(value);
+  - it is called from the instance of the class that implements Comparable
+  - best practice is to have this.compareTo(o) == 0 result in this.equals(o) being true
+  - Arrays.sort(T[] elements) requires T to implement Comparable, more specifically, the methods compareTo on the interface Comparable
+
+- Comparator
+  - general form : int compare(T o1, T o2) //where T stands for a specific type and o1 and 02 stand for an object of that type
+  - it compares two arguments of the same type with one another
+  - it is called from an instance of Comparator
+  - does not require the class itself to implement the Comparator interface, though you could implement it this way
+  - Arrays.sort(T[] elements, Comparator<T>) does not require T to implement the Comparable interface
+  - Comparator allows for a variety of different ways to sort an object
