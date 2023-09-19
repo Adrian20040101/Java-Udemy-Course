@@ -1,0 +1,8 @@
+- there are four types of nested classes:
+  - static nested class -> declared in class body. Much like a static field, access to this class is through the Class name identifier
+  - instance or inner class -> declared in class body and can only be accessed through an instance of the outer class
+  - local class -> declared within a method body
+  - anonymous class -> unnamed class, declared and instantiated in the same statement
+
+- before JDK16, only static nested classes were allowed to have static methods, but as of JDK16, all four types of nested classes can have 
+  static members of any type, including static methods
