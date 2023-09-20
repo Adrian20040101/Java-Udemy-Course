@@ -1,0 +1,29 @@
+- Local Classes:
+
+  - local classes are inner classes, but declared directly in a code bock, usually a method body
+  - because of that, they don't have access modifiers and are only accessible to that method body while it's execeuting
+  - like an inner class, they have access to all fields and methods on the enclosing(outer) class
+  - they can also access local variables and method arguments, that are final or effectively final only
+  - final variables are declared using the keyword 'final', meaning that their value cannot be changed
+  - effectively final variables are just like final variables, but without explicitly specifying the keyword 'final' (if a value is assigned
+  to it, it cannot be changed later)
+  - why use a class that is declared inside the body of a method? Well, it has some benefits and use cases where it might be helpful, for 
+  example when you want that specific class to be used just for a single action within the project, and you don't want it to be accessable
+  by anyone else.
+
+- Anonymous Classes:
+
+  - an anonymous class is a local class that doesn't have a name
+  - it is never created with a class declaration, but it is always instantiated as part of an expression
+  - anonymous classes are used a lot less, since the introduction of lambda expressions in JDK 8, but there might still be some use cases
+    for them
+  - syntax of an anonymous class: 
+
+    - first, anonymous classes can be declared so that they need to implement another methods, like in an interface
+      1. var variable1 = new Comparator<StoreEmployee>() {}; //in this example, we also need to implement the method compare on the 
+         Comparator interface
+      2. var variable2 = new Employee{}; //in this example, the anonymous class extends the class Employee, making it a subclass of 
+         Employee
+      - remember that in both cases, a semicolon ';' is needed after the expression
+
+    
