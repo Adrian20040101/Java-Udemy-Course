@@ -1,0 +1,13 @@
+- a Predicate interface takes one or two arguments and returns a boolean value
+
+- it is used to test a condition, and based on the boolean value returned, some operation will or will not be performed
+
+- just like the Consumer interface, there is Predicate(which only takes one argument) and BiPredicate(which takes two arguments)
+
+- method signatures for these two interfaces are : boolean test(T t) and boolean test(T t, U u)
+
+- example of an use case: s -> s.equalsIgnoreCase("Hello") //in this example, the lambda expression checks if the parameter s is a String
+  that is equal to "Hello", ignoring the case sensitivity
+
+- an useful scenario where we might use this, is when we use the removeIf method (we pass the lambda expression as the parameter in the 
+  removeIf method, which will remove an object from a collection if the lambda expression evaluates to true)

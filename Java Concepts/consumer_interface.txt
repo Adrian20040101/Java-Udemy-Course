@@ -1,0 +1,5 @@
+- there are two types of Consumer interfaces:
+  - Consumer -> which takes one argument of any type, i.e. void accept(T t)
+  - BiConsumer -> which takes two arguments of different types, i.e. void accept(T t, U u)
+
+- example of consumer lambda expression: s -> System.out.println(s);  //notice that no result is returned

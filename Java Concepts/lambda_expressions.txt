@@ -1,0 +1,46 @@
+- general syntax: (parameter1, parameter2, ...) -> expression
+
+- general syntax example: var comparator = (o1, o2) -> o1.name.compareTo(o2.name); //we declare a list of parameters and then the expression
+
+- lambda expressions and anonymous classes are pretty similar in terms of functionality
+
+- the difference is that lambda expressions have no reference on the enclosing class
+
+- for a lambda expression, the method is inferred by Java
+
+- Java takes its clue from the reference type, in the context of the lambda expression usage
+  i.e. short example:
+      - simplified view of the sort method on the List: void sort(Comparator c)
+      - here is the call to that method, passing the lambda expression: people.sort((o1, o2) -> o1.name.compareTo(o2.name));
+
+- from the example above, Java can infer that that is a lambda expression and resolves a Comparator type, because of the method declaration
+
+- this means the lambda expression passed, should represent code for a specific method on the Comparator interface. Question is: which 
+  method? Well, there is only one method that the lambda expression cares about, and that is the abstract method on Comparator. Java 
+  requires types which support lambda expressions to be something called functional interfaces. A functional interface, or SAM (Single 
+  Abstract Method) is an interface that has one and ONLY ONE abstract method. This is how Java can infer the method to derive the parameters
+  and return type for the lambda expression
+
+- if there is only one parameter in the lambda expression, parantheses around the parameter are not even needed
+
+- we can specify the type of the parameter (i.e. int, String etc.). It might help with readability, but is not really useful, since Java 
+  can infer the type. But if we do specify the type of the parameter, then parantheses are mandatory
+
+- if we specify the type of a parameter, then we must specify the types of all parameters, i.e. cannot compile something like this:
+  (String param1, var param2) , because we didn't specify the type of param2. By typing in 'var', Java still has to infer the type, 
+  therefore, this is not a valid syntax
+
+- we can add multiple statements in the same lambda expression, bu then we have to also include curly braces
+
+- we can use variables outside of the lambda expression, as long as these variables are final or effectively final
+
+- names of variables declared inside of the lambda expression cannot collide with names of variables of the enclosing method
+
+- when not using curly braces, return statement is unnecessary, and will actually give a cmpiler error, but when using curly braces
+  and declaring multiple statements, a return statement at the end is required, if the function method has a return type
+
+- lambdas are considered Java's first steps into functional programming, a programming paradigm that focuses on computing and returning 
+  results
+
+- lambdas are very important when it comes to the use of streams, which will be covered later on. Many of the stream operations take
+  functional interfaces as parameters, meaning they can be coded using lambda expressions
