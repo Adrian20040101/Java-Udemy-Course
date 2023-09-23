@@ -1,0 +1,12 @@
+- the Supplier interface takes no arguments, but returns an instance of some type, T.
+
+- interface name + method signature:
+  Supplier         T get()
+
+- we can think of it as kind of like a factory method, since it produces an instance of some object
+
+- however, this doesn't have to be a new or distinct result returned
+
+- here is an use case example : () -> random.nextInt(1, 100)
+  we can see that this methid takes no arguements, but lambda expressions can use final or effectively final variables in their expressions.
+  The variable is an example of a variable from the enclosing code

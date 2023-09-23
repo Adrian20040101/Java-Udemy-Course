@@ -1,0 +1,14 @@
+- the four most common interfaces in this category are Function, BiFunction, UnaryOperator and BinaryOperator
+
+- interfaces names + method signatures:
+  Function <T,R>           R apply(T t)
+  BiFunction<T,U,R>        R apply(T t, U u)
+  UnaryOperator<T>         T apply(T t1)       //we can think of it as a Function interface, where argument type is the same as result type
+  BinaryOperator<T>        T apply(T t1, T t2) //we can think of it as a BiFunction interface, where both arguments have the same type as
+                                               //does the result, which is why the result is shown as T, and not R
+
+- the result for a Function or a BiFunction is declared as the last type argument, in our cases R
+
+- example of an use case: s -> s.split(",");  //function method: R apply(T t)
+  this example takes the argument type T, which in our case is String and the result is R, in our case an array of String(String[]). This 
+  is because split efectivelly takes parts of strings delimited by a comma, and assigns them to a String array 
