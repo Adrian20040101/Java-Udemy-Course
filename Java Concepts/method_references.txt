@@ -1,0 +1,58 @@
+- there are 2 kind of lambda expressions we can encounter: the ones in which we write an operatin or expression, and the ones that simply 
+  reference other named methods, like System.out.println for example
+
+- for this second kind of lambda expressions, Java provides an alternative solution that enhances code readability, these are called method
+  references
+
+- these provide a more compact, easier to read lambda expression, for methods that are already defined on a class
+
+- general syntax: let's first demonstrate the difference between a lambda expression and a method reference for System.out.println
+  Lambda Expression: s -> System.out.println(s)
+  Method Reference: System.out::println  
+
+- notice a few key differences in the example shown above:
+  1. a method reference abstracts the lambda expression even further, eliminating the need to declare formal parameters
+  2. we also don't have to pass arguments to the method in question, in this case println
+  3. a method reference has double colons (::) between the qualifying type/object and the method name
+  4. the example above is of a Consumer interface, in which not only the method is inferred, but the parameters as well
+
+- methods which can be used, are based on the context of the lambda expression
+
+- this means that again, the method reference is dependent on the targeted interface's method
+
+- it is possible to reference a static method on a class
+
+- it is possible to reference an instance method from either an instance external to the expression, or an instance passed as one of the 
+  arguments
+
+- even a constructor can be referenced, by using the new keyword as the method
+
+- in general, method references are used to enhance the readability of your code
+
+- a type reference refers to a class name, an enum name, an interface name or a record name 
+
+- remember that static methods are usually called using Type References, but can also be called by instances, that is not true for method
+  references however. Static methods in method references and lambda expressions, must be invoked using a reference type only
+
+- there are two ways to call an instance method: 
+  1. - when you refere to the method using an instance derived from the enclosing code (this method is declared outside of the method
+       reference)
+     - System.out::println method reference is an example
+     - some use the terminology "Bounded Receiver" for this instance. A bounded receiver is an instance derived from the enclosing code, 
+       used in the lambda expression, on which the method will be invoked
+  2. - a bit more confusing - the instance used to invoke the method, will be the first argument passed to the lambda expression or 
+       method reference when executed
+     - this is known as an "Unbounded Receiver" - it gets dynamically bound to the first argument, which is passed to the lambda
+       expression, when the method is executed; this looks very similar to a static method reference, using a reference type
+     - this means there are two method references that resemble each other, but have very different meanings
+     - the first actually calls a static method and uses a reference type to do it, i.e. Integer::sum - this is a Type Reference (Integer 
+       is the type), which will invoke a static method
+     - but there is another, which is often seen when working with String method references, i.e. String::concat 
+     - the confusing part in the example above, is, that even though concat isn't a static method on String, it still works
+     - the example above is a special syntax, when declared in the right context, meaning when it is associated to the right type of
+       interface
+     - this is valid when we use a method reference in the context of an unbounded receiver
+     - remember! the unbounded receiver means, that the first argument becomes the instance used, on which the method gets invoked
+     - any method reference that uses String::concat must be in the context of a two parameter functional method
+     - the first parameter is the String instance on which the concat method gets invoked, and the second argument is the String argument
+       passed to the concat method
