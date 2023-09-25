@@ -38,11 +38,11 @@
   1. - when you refere to the method using an instance derived from the enclosing code (this method is declared outside of the method
        reference)
      - System.out::println method reference is an example
-     - some use the terminology "Bounded Receiver" for this instance. A bounded receiver is an instance derived from the enclosing code, 
+     - some use the terminology "Bounded Retriever" for this instance. A bounded retriever is an instance derived from the enclosing code, 
        used in the lambda expression, on which the method will be invoked
   2. - a bit more confusing - the instance used to invoke the method, will be the first argument passed to the lambda expression or 
        method reference when executed
-     - this is known as an "Unbounded Receiver" - it gets dynamically bound to the first argument, which is passed to the lambda
+     - this is known as an "Unbounded Retriever" - it gets dynamically bound to the first argument, which is passed to the lambda
        expression, when the method is executed; this looks very similar to a static method reference, using a reference type
      - this means there are two method references that resemble each other, but have very different meanings
      - the first actually calls a static method and uses a reference type to do it, i.e. Integer::sum - this is a Type Reference (Integer 
@@ -51,8 +51,8 @@
      - the confusing part in the example above, is, that even though concat isn't a static method on String, it still works
      - the example above is a special syntax, when declared in the right context, meaning when it is associated to the right type of
        interface
-     - this is valid when we use a method reference in the context of an unbounded receiver
-     - remember! the unbounded receiver means, that the first argument becomes the instance used, on which the method gets invoked
+     - this is valid when we use a method reference in the context of an unbounded retriever
+     - remember! the unbounded retriever means, that the first argument becomes the instance used, on which the method gets invoked
      - any method reference that uses String::concat must be in the context of a two parameter functional method
      - the first parameter is the String instance on which the concat method gets invoked, and the second argument is the String argument
        passed to the concat method
