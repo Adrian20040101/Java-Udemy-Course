@@ -1,0 +1,7 @@
+Bill wants to have an application built for him, where he can compose meal orders from clients
+Orders are always composed of a burger, a drink and a side. There have to be options to change the type of the
+burger, including a regular and a deluxe burger. Drink size should also be changeable.
+Furthermore, a regular burger can contain up to 3 toppings, priced accordingly.
+The deluxe burger can contain up to 5 toppings for no extra cost. The deluxe burger is actually a meal where the
+client only pays for the burger. The rest of the order items will be free.
+Finally, there should also be an option to get a default meal, if no specific requirements are set
