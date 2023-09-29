@@ -1,0 +1,14 @@
+- create some mappable output
+- the map should contain points, lines and geometric shapes
+- it should print an itemized one-liner that describes the object's attributes
+- i.e. "properties" : { "name" : "Sydney Opera House", "usage" : "Entertainment" }
+- create a Mappable interface, that should force classes to implement three methods:
+  - return a label
+  - return a geometry type (Point/Line)
+  - return an icon type (marker)
+- additionally, we'll have a constant string named JSON_PROPERTY set to "properties : { %s }", representing
+  the format in which the data is going to be output, as seen in the example above
+- default method called JSON() that prints out the type, label and marker
+- a static method on the interface that should print out data of the mappable type, as well as other properties
+  of a business class (in this case Building or UtilityLine)
+- make sure to specify from the beginning that Building = Point and UtilityLine = Line
